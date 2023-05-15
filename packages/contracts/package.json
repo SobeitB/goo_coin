@@ -1,0 +1,18 @@
+{
+  "devDependencies": {
+    "@matterlabs/hardhat-zksync-toolbox": "^0.1.1",
+    "@nomicfoundation/hardhat-toolbox": "^2.0.2",
+    "dotenv": "^16.0.3",
+    "hardhat": "^2.13.0"
+  },
+  "dependencies": {
+    "@chainlink/contracts": "^0.6.1",
+    "@openzeppelin/contracts": "^4.8.3",
+    "@uniswap/v2-periphery": "^1.1.0-beta.0",
+    "@uniswap/v3-core": "^1.0.1",
+    "ethers": "^5.7.2",
+    "openzeppelin-solidity": "^3.4.2",
+    "typechain": "^8.1.1",
+    "web3": "^1.10.0"
+  }
+}
