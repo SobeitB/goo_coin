@@ -38,3 +38,6 @@ export const wagmiClient = createClient({
   provider,
   webSocketProvider
 });
+
+
+export {ERC20_GOO} from './contracts'
