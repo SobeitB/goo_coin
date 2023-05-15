@@ -46,6 +46,25 @@ export const BodyNotification = styled.div
     : "--font-size-h4"
   });
   color: var(--font-color-white);
+
+  @media(max-width: 780px) {
+    font-size:${(props) => props.theme !== NotificationType.INFO
+        && "25px"
+    };
+  }
+
+  @media(max-width: 600px) {
+    font-size:${(props) => props.theme !== NotificationType.INFO
+            && "23px"
+    };
+  }
+
+  @media(max-width: 400px) {
+    font-size:${(props) => props.theme !== NotificationType.INFO
+            && "19px"
+    };
+    padding: 20px;
+  }
 `;
 
 export const NotificationText = styled.p.attrs(
@@ -67,6 +86,40 @@ export const BodyIcon = styled.div`
   border-radius: 50%;
 
   margin-bottom: 50px;
+
+  @media(max-width: 1440px) {
+    width: 254px;
+    height: 254px;
+    margin-bottom: 20px;
+  }
+
+  @media(max-width: 1000px) {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 20px;
+    border-width:7px;
+    
+    & img {
+      width: 60%;
+    }
+  }
+  
+  @media(max-width: 780px) {
+    width: 170px;
+    height: 170px;
+    border-width:5px;
+  }
+  
+  @media(max-width: 600px) {
+    width: 140px;
+    height: 140px;
+    margin-bottom: 10px;
+  }
+
+  @media(max-width: 400px) {
+    width: 120px;
+    height: 120px;
+  }
 `
 
 export const BorderType = styled.div
@@ -86,6 +139,14 @@ export const BorderType = styled.div
       '#27C100'
     }
   ;
+
+  @media(max-width: 1000px) {
+    border-width:7px;
+  }
+
+  @media(max-width: 780px) {
+    border-width:5px;
+  }
 `
 
 

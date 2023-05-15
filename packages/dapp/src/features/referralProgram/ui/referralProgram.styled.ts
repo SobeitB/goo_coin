@@ -3,6 +3,7 @@
 import { sizeMixin } from "shared/lib/mixinsCSS";
 import { Title } from "shared/ui/Title";
 import styled from "styled-components";
+import {BtnUI} from "shared/ui/Button";
 
 
 export const BodyReferral = styled.div`
@@ -133,30 +134,28 @@ export const ReferralCopy = styled.img`
     }
 `
 
-export const ReferralBtn = styled.button`
-    background: var(--bg-color-blue);
-    border: 5px solid var(--font-color-white);
-    border-radius: 20px;
+export const ReferralBtn = styled.div`
 
-    font-weight: var(--font-weight-bold);
-    font-size: var(--font-size-h4);
+  width: 408px;
+  height: 81px;
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-h4);
 
-    padding: 20px 30px;
+  
+  & ${BtnUI} {
+    ${sizeMixin(22, 33, 1067)};
+  }
+  ${sizeMixin(26, 52, 1067, "margin-top")};
 
-    ${sizeMixin(22, 33, 1067)}
-    ${sizeMixin(26, 52, 1067, "margin-top")}
-
-    @media (max-width: 550px) {
-        padding: 15px 10px;
-        width: 93.959731544%;
-        font-size: 20px;
-        margin-top: 26px;
-        border-radius: 10px;
+  @media (max-width: 550px) {
+      width: 93.959731544%;
+      & ${BtnUI} {
+        font-size: 20px !important;
+      }
+      margin-top: 26px;
     }
 
-    @media (max-width: 370px) {
-        font-size: 16px;
-    }
+  @media (max-width: 370px) {
+    font-size: 16px;
+  }
 `
-
-

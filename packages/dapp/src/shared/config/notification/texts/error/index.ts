@@ -33,4 +33,9 @@ export const NETWORK:ObjNotification = {
     text:CHANGE_NETWORK,
 }
 
+export const NOT_COPY = 'the wallet addressee was not typed correctly!';
+export const NOT_ADDRESS = 'The string does not match the format of the addressee!';
+export const YOUR_ADDRESS = 'You can\'t put your addressee in the referral link!';
+export const DEADLINE = 'Presale time is not over!';
+
 export const ALL_ERRORS = [TOO_OLD_ROUND, PAYMENT, TOO_MUCH_BETS, PAYMENT_GAS, ACTIVE_GAME_CLAIM, NETWORK];

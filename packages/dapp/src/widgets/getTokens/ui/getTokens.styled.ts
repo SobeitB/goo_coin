@@ -12,7 +12,12 @@ export const Body = styled(BodyCenter)`
     }
 `
 
-export const WrapperGetTokens = styled.div`
+export const TabsMenu = styled.div`
+
+`
+
+export const WrapperGetTokens = styled.div
+    .attrs((props: {isPresale:boolean}) => props)`
     width: 100%;
     ${sizeMixin(80, 105, 1067, "margin-top")}
     
@@ -20,18 +25,17 @@ export const WrapperGetTokens = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 40px 20px;
 
-    background: var(--bg-color-blue-blur);
+    ${sizeMixin(10, 40, 1440, "padding-top")}
+    ${sizeMixin(28, 57, 1440, "padding-bottom")}
+    ${sizeMixin(9, 20, 1440, "padding-right")}
+    ${sizeMixin(9, 20, 1440, "padding-left")}
+
+    background: ${props => props.isPresale ? '#020236' : 'var(--bg-color-blue-blur)'};
     border: 7px solid var(--font-color-white);
     border-radius: 30px;
     
     
-`
-
-export const TitleGet = styled.h2`
-    font-weight: var(--font-weight-bold);
-    font-size: 45px;
 `
 
 export const BodyChoose = styled.div

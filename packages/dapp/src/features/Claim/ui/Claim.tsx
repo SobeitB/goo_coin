@@ -1,8 +1,9 @@
 import { memo } from "react"
-import { BodyCircle, BodyClaimBtn, BodyTime, ClaimBtn } from "./Claim.styled"
+import { BodyCircle, BodyClaimBtn, BodyTime, ClaimBtn, MarginTopProgress } from "./Claim.styled"
 import { NotificationCircle } from "shared/ui/NotificationCircle"
-import {DescriptionGet, DescriptionTime, Timer} from "shared/ui/getComponents"
+import {DescriptionGet, DescriptionTime, Progress, Timer} from "shared/ui/getComponents"
 import { WalletConnect } from "entities/user"
+import {WrapperBtn} from "shared/ui/getComponents/styledShared.ts";
 
 
 export const Claim = memo(() => {
@@ -23,9 +24,13 @@ export const Claim = memo(() => {
             <BodyTime>
                 <DescriptionTime>Time left before airdrop/presale ends.</DescriptionTime>
                 <Timer timeLeft={100000} />
+                <MarginTopProgress />
+                <Progress percentClaimed={50} />
             </BodyTime>
 
-            <WalletConnect />
+            <WrapperBtn>
+                <WalletConnect />
+            </WrapperBtn>
         </>
     )
 })

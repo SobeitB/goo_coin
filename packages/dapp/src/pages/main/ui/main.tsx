@@ -5,7 +5,7 @@ import { About } from "widgets/about"
 
 import { Welcome } from "widgets/welcome"
 import { SalePlatforms } from "widgets/salePlatforms"
-import { ReferralProgram } from "widgets/referralProgram"
+import { ReferralProgram } from "features/referralProgram"
 import { Information } from "widgets/information"
 import { Collabarations } from "widgets/Collabarations"
 import { Goseemap } from "widgets/goseemap"

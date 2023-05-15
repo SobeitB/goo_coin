@@ -1,6 +1,6 @@
 
 import { styled } from "styled-components";
-import imgLi from "./img/imgLi.svg";
+import imgLi from "shared/assets/img/imgLi.svg";
 import { Title } from "shared/ui/Title";
 import { sizeMixin } from "shared/lib/mixinsCSS";
 

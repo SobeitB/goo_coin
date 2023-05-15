@@ -6,7 +6,7 @@ import { Title } from "shared/ui/Title"
 import { phases } from "../config"
 import { roadmapAnchor } from "shared/config/router"
 
-import next from './img/next.svg'
+import next from 'shared/assets/img/next.svg'
 
 
 export const Goseemap  = () => {

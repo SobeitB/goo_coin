@@ -2,6 +2,8 @@
 import styled from "styled-components";
 
 import { sizeMixin } from "shared/lib/mixinsCSS";
+import {BtnUI, ButtonType} from "../../../shared/ui/Button";
+import {Link} from "atomic-router-react";
 
 
 export const BodyMainAfterPreSale = styled.div`
@@ -75,19 +77,39 @@ export const ListPlatforms = styled.div`
 export const NamePlatforms = styled.p`
 `;
 
-export const BodyPlatforms = styled.div`
+export const TitlePlatforms = styled.p`
+  ${sizeMixin(32, 38, 1067)}
+
+  font-weight:var(--font-weight-bold);
+  margin-left: 23px;
+
+  @media (max-width:450px) {
+    margin-left: 8px;
+  }
+`
+
+export const LinkPlatforms = styled(Link)`
+  
+`
+
+export const BodyPlatforms = styled(BtnUI)`
   min-width: 310px;
   max-width: 370px;
   height: 103px;
-  background: rgba(1, 0, 29, 0.68);
-  border: 7px solid var(--font-color-white);
-  border-radius: 30px;
 
   padding: 17px 28px;
 
   display: flex;
   align-items: center;
   justify-content: space-between;
+  
+  &:hover ${TitlePlatforms} {
+    display: none;
+  }
+
+  &:hover {
+    justify-content:center;
+  }
 
   @media (max-width:450px) {
     padding: 17px 18px;
@@ -99,16 +121,6 @@ export const BodyPlatforms = styled.div`
   }
 `;
 
-export const TitlePlatforms = styled.p`
-  ${sizeMixin(32, 38, 1067)}
-
-  font-weight:var(--font-weight-bold);
-  margin-left: 23px;
-
-  @media (max-width:450px) {
-    margin-left: 8px;
-  }
-`
 
 export const IconPlatforms = styled.img`
   @media (max-width:430px) {

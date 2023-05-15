@@ -1,15 +1,17 @@
 import { useConnectModal } from "@rainbow-me/rainbowkit";
+import { useAccount } from "wagmi";
 
-import { WalletConnectBtn } from "./walletConnect.styled";
+import {Button} from "shared/ui/Button";
 
 export const WalletConnect = () => {
   const { openConnectModal } = useConnectModal();
+  const {address} = useAccount()
 
-  return (
-    <>
-      {openConnectModal && (
-        <WalletConnectBtn onClick={openConnectModal}>Connect</WalletConnectBtn>
-      )}
-    </>
-  );
+  if(openConnectModal && !address) {
+    return (
+      <Button onClick={openConnectModal}>Connect</Button>
+    )
+  }
+
+  return null;
 };

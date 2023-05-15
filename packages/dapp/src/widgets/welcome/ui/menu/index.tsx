@@ -4,7 +4,7 @@ import { useStore } from "effector-react";
 import { Links, ListLinks, MenuWrapper, WrapperBtnMenu } from "./styled";
 
 import { BtnMenuMobile } from "./menuBtn";
-import { $isOpenMenu } from "widgets/welcome/lib";
+import {$isOpenMenu, onChangeStateMenu} from "widgets/welcome/lib";
 import { linksAnchor } from "shared/config/router";
 
 export const MenuMobile = () => {
@@ -15,7 +15,7 @@ export const MenuMobile = () => {
 
       <ListLinks>
         {linksAnchor.map((link) => (
-          <Links key={link.link} to={link.link}>
+          <Links key={link.link} to={link.link} onClick={onChangeStateMenu}>
             {link.title}
           </Links>
         ))}

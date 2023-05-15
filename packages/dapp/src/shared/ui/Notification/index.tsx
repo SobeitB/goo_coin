@@ -5,6 +5,8 @@ import { BodyIcon, BodyNotification, BorderType } from "./styled";
 
 import { deleteNotification, notificationStore } from "shared/lib/notification";
 import { NotificationType } from "shared/config/notification";
+import success  from "./img/success.svg";
+import error from "./img/error.svg";
 
 export const Notification = () => {
   const stateNotification = useStore(notificationStore.$notification);
@@ -21,7 +23,7 @@ export const Notification = () => {
     }
   }, [stateNotification]);
 
-  if (!stateNotification) return null;
+  if (!stateNotification) return null
 
   return (
     <BodyNotification theme={stateNotification.type}>
@@ -29,7 +31,9 @@ export const Notification = () => {
       {stateNotification.type !== NotificationType.INFO &&
         <BodyIcon>
           <BorderType theme={stateNotification.type}>
-
+            <img
+              src={stateNotification.type === NotificationType.ERROR ? error : success}
+            />
           </BorderType>
         </BodyIcon>
       }
