@@ -2,11 +2,12 @@
 
 import styled from 'styled-components'
 import footer from './img/footer.png'
+import {sizeMixin} from "../../../shared/lib/mixinsCSS";
 
 export const Wrapper = styled.footer`
     width: 100%;
-
-    margin-top:200px;
+  
+  ${sizeMixin(100, 200, 1440,"margin-top")}
 `
 
 export const BgFooter = styled.img`
@@ -37,7 +38,7 @@ export const FooterContent = styled.div`
 `
 
 export const Text = styled.h3`
-    font-size: var(--font-size-x-small);
+  ${sizeMixin(5, 20, 1440,)}
     text-align: center;
 `
 

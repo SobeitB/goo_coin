@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 export const Title = styled.h1`
   font-weight: var(--font-weight-bold);
-  font-size: var(--font-size-h1);
+  text-align: center;
 
   ${sizeMixin(32, 48, 1067)}
 `;

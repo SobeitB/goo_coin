@@ -34,6 +34,7 @@ export const BodyCircle = styled.div`
 
 export const BodyTime = styled.div`
     margin-top:71px;
+    width: 100%;
 `
 
 
