@@ -1,0 +1,3 @@
+
+
+export {Information} from './infromation'

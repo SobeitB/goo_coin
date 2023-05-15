@@ -1,0 +1,2 @@
+
+export {socLinks} from './links'

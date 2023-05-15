@@ -1,0 +1,26 @@
+@font-face {
+    font-family: 'Comic Sans MS';
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: url(./fonts/COMIC_SANS_MS.woff2) format('woff2');
+}
+
+:root {
+	--font-family-400: 'Comic Sans MS', sans-serif;
+
+	--font-weight-bold: 700;
+	--font-weight-normal: 400;
+
+	--font-color-white: #FFFFFF;
+	--font-color-white-hard: rgba(255, 255, 255, 0.65);
+	--bg-color-blue-blur: rgba(2, 2, 54, 0.36);
+	--bg-color-blue: rgba(1, 0, 29, 0.5);
+	--bg-color-blue-dark-blur: rgba(1, 0, 29, 0.28);
+
+	--font-size-x-small: 20px;
+	--font-size-h1: 48px;
+	--font-size-h2: 40px;
+	--font-size-h3: 36px;
+	--font-size-h4: 33px;
+}
