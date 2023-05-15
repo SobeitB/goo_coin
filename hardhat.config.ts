@@ -3,9 +3,9 @@ import "@nomicfoundation/hardhat-toolbox";
 import "@matterlabs/hardhat-zksync-toolbox";
 
 const config: HardhatUserConfig = {
-  // defaultNetwork: "zkTestnet", --network zkTestnet
+  defaultNetwork: "zkSyncTestnet",   
   zksolc: {
-    version: "1.3.5",
+    version: "1.3.10",
     compilerSource: "binary",
     settings: {},
   },
@@ -22,16 +22,20 @@ const config: HardhatUserConfig = {
     hardhat: {
       chainId: 1337
     },
-    goerli: {
-      chainId: 5,
-      url: `https://eth-goerli.g.alchemy.com/v2/${API_KEY}`,
-      accounts: `privateKey`,
-      // ethNetwork: "goerli",
-    },
+    // goerli: {
+    //   chainId: 5,
+    //   url: `https://eth-goerli.g.alchemy.com/v2/${API_KEY}`,
+    //   accounts: `privateKey`,
+    //   // ethNetwork: "goerli",
+    // },
+    // sepolia: {
+    //   url: `https://sepolia.infura.io/v3/${INFURA_API_KEY}`,
+    //   accounts: [SEPOLIA_PRIVATE_KEY]
+    // },
 
-    zkTestnet: {
-      url: "https://zksync2-testnet.zksync.dev",
-      ethNetwork: "goerli",
+    zkSyncTestnet: {
+      url: "https://testnet.era.zksync.dev",
+      ethNetwork: `https://eth-goerli.g.alchemy.com/v2/proccess.env.ALCHEMY_API_KEY`,
       zksync: true,
     },
   },   
