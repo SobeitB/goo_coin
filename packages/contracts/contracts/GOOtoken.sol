@@ -137,7 +137,7 @@ contract GOOtoken is ERC20, AccessControl {
         require(success, "CANTWITHDRAW");
     }
 
-    function mint(uint256 _amount)external onlyOwner {
+    function mint(uint256 _amount) external onlyOwner {
         _mint(msg.sender, _amount);
     }
 
