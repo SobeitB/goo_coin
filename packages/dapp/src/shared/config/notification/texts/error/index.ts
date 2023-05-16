@@ -15,6 +15,8 @@ export const DEADLINE = 'Presale time is not over!';
 export const TIME = "Time's up!";
 export const CLAIM_TRUE = "You've already taken the award!";
 export const ACCOUNT = "connect in your wallet!";
+export const MIN_ETH = "Too small a number!";
+export const MAX_ETH = "Too many tokens!";
 
 
 export const ALL_ERRORS = [TOO_OLD_ROUND,];

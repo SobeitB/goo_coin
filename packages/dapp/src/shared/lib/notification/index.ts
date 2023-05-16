@@ -17,3 +17,4 @@ export const deleteNotification = () => {
 };
 
 export { catchErrorNotification } from "./catchNewNotification";
+export {sharedCatch}from './sharedCatch.ts'

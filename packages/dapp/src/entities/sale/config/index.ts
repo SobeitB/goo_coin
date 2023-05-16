@@ -1,3 +1,3 @@
 
 
-export {AIR_DROP, PRESALE_DROP} from './poolsNumber.ts'
+export {AIR_DROP, PRESALE_DROP, PRICE_TOKEN, MIN_PRICE, MAX_PRICE} from './tokens.ts'

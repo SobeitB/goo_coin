@@ -1,3 +1,7 @@
+
+import {memo, RefObject} from "react";
+import {useStore} from "effector-react";
+
 import {
     BodySwap,
     BodyToken,
@@ -12,7 +16,12 @@ import {
 
 import eth from './img/eth.svg'
 import next from 'shared/assets/img/next.svg'
-export const Swap = () => {
+import {MIN_PRICE, PRICE_TOKEN} from "entities/sale/config";
+import {$inputSend, onInputSend} from "../../model";
+
+
+export const Swap = memo(({inputSend}:{inputSend:RefObject<HTMLInputElement>}) => {
+    const value = useStore($inputSend)
     return(
         <BodySwap>
             <SwapItem>
@@ -24,7 +33,10 @@ export const Swap = () => {
                 <InputBody>
                     <InputCount
                         type="number"
-                        placeholder="0.005 eth min"
+                        placeholder={`${MIN_PRICE} eth min`}
+                        value={value}
+                        onChange={(e:any) => onInputSend(e.target.value as string)}
+                        ref={inputSend}
                     />
 
                     <BodyToken>
@@ -46,6 +58,7 @@ export const Swap = () => {
                     <InputCount
                         type="number"
                         placeholder="0.0000000"
+                        value={(+value / PRICE_TOKEN).toFixed(0)}
                     />
 
                     <BodyToken>
@@ -56,4 +69,4 @@ export const Swap = () => {
             </SwapItem>
         </BodySwap>
     )
-}
+})

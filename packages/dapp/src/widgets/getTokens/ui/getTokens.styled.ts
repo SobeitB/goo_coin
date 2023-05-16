@@ -3,6 +3,7 @@ import styled  from "styled-components";
 
 import { BodyCenter } from "shared/ui/Container";
 import { sizeMixin } from "shared/lib/mixinsCSS";
+import {BtnUI} from "shared/ui/Button";
 
 export const Body = styled(BodyCenter)`
     ${sizeMixin(100, 200, 1067, "margin-top")};
@@ -13,13 +14,49 @@ export const Body = styled(BodyCenter)`
 `
 
 export const TabsMenu = styled.div`
+  ${sizeMixin(80, 105, 1440, "margin-top")}
+  display:flex;
+  gap:5px;
+  align-items: center;
+  margin-bottom: 5px;
+  margin-right: auto;
+  @media(max-width: 650px) {
+    width: 100%;
+  }
+`
 
+export const Tab = styled.div`
+  position: relative;
+  ${sizeMixin(164, 331, 1440, "width")}
+  ${sizeMixin(56, 100, 1440, "height")};
+  
+  @media(max-width: 768px) {
+      ${sizeMixin(100, 250, 1440, "width")}
+      ${sizeMixin(36, 80, 1440, "height")}
+  }
+
+  @media(max-width: 650px) {
+    width: 50%;
+    height:60px;
+  }
+
+  @media(max-width: 550px) {
+    & ${BtnUI} {
+      font-size: 32px;
+      border-width: 5px;
+    }
+  }
+
+  @media(max-width: 380px) {
+    & ${BtnUI} {
+      font-size: 27px;
+    }
+  }
 `
 
 export const WrapperGetTokens = styled.div
     .attrs((props: {isPresale:boolean}) => props)`
     width: 100%;
-    ${sizeMixin(80, 105, 1067, "margin-top")}
     
     display: flex;
     flex-direction: column;
