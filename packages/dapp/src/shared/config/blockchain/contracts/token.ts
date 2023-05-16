@@ -1,6 +1,9 @@
 
-export const ERC20_GOO = {
-      address:"",
+export const ERC20_GOO:{
+      address:`0x${string}`;
+      abi:any[]
+} = {
+      address:"0xF82F6aC77D3c2aB12961DC09685ecF98dc4f27E6",
       abi:[
             {
                   "inputs": [],
@@ -82,6 +85,19 @@ export const ERC20_GOO = {
                         {
                               "indexed": false,
                               "internalType": "uint256",
+                              "name": "airdropPoolTokens",
+                              "type": "uint256"
+                        }
+                  ],
+                  "name": "ClaimTokensPool",
+                  "type": "event"
+            },
+            {
+                  "anonymous": false,
+                  "inputs": [
+                        {
+                              "indexed": false,
+                              "internalType": "uint256",
                               "name": "end",
                               "type": "uint256"
                         },
@@ -124,6 +140,94 @@ export const ERC20_GOO = {
                   "anonymous": false,
                   "inputs": [
                         {
+                              "indexed": false,
+                              "internalType": "uint256",
+                              "name": "presalePoolTokens",
+                              "type": "uint256"
+                        }
+                  ],
+                  "name": "PresaleTokensPool",
+                  "type": "event"
+            },
+            {
+                  "anonymous": false,
+                  "inputs": [
+                        {
+                              "indexed": true,
+                              "internalType": "bytes32",
+                              "name": "role",
+                              "type": "bytes32"
+                        },
+                        {
+                              "indexed": true,
+                              "internalType": "bytes32",
+                              "name": "previousAdminRole",
+                              "type": "bytes32"
+                        },
+                        {
+                              "indexed": true,
+                              "internalType": "bytes32",
+                              "name": "newAdminRole",
+                              "type": "bytes32"
+                        }
+                  ],
+                  "name": "RoleAdminChanged",
+                  "type": "event"
+            },
+            {
+                  "anonymous": false,
+                  "inputs": [
+                        {
+                              "indexed": true,
+                              "internalType": "bytes32",
+                              "name": "role",
+                              "type": "bytes32"
+                        },
+                        {
+                              "indexed": true,
+                              "internalType": "address",
+                              "name": "account",
+                              "type": "address"
+                        },
+                        {
+                              "indexed": true,
+                              "internalType": "address",
+                              "name": "sender",
+                              "type": "address"
+                        }
+                  ],
+                  "name": "RoleGranted",
+                  "type": "event"
+            },
+            {
+                  "anonymous": false,
+                  "inputs": [
+                        {
+                              "indexed": true,
+                              "internalType": "bytes32",
+                              "name": "role",
+                              "type": "bytes32"
+                        },
+                        {
+                              "indexed": true,
+                              "internalType": "address",
+                              "name": "account",
+                              "type": "address"
+                        },
+                        {
+                              "indexed": true,
+                              "internalType": "address",
+                              "name": "sender",
+                              "type": "address"
+                        }
+                  ],
+                  "name": "RoleRevoked",
+                  "type": "event"
+            },
+            {
+                  "anonymous": false,
+                  "inputs": [
+                        {
                               "indexed": true,
                               "internalType": "address",
                               "name": "from",
@@ -144,6 +248,32 @@ export const ERC20_GOO = {
                   ],
                   "name": "Transfer",
                   "type": "event"
+            },
+            {
+                  "inputs": [],
+                  "name": "BURNER_ROLE",
+                  "outputs": [
+                        {
+                              "internalType": "bytes32",
+                              "name": "",
+                              "type": "bytes32"
+                        }
+                  ],
+                  "stateMutability": "view",
+                  "type": "function"
+            },
+            {
+                  "inputs": [],
+                  "name": "DEFAULT_ADMIN_ROLE",
+                  "outputs": [
+                        {
+                              "internalType": "bytes32",
+                              "name": "",
+                              "type": "bytes32"
+                        }
+                  ],
+                  "stateMutability": "view",
+                  "type": "function"
             },
             {
                   "inputs": [],
@@ -172,19 +302,6 @@ export const ERC20_GOO = {
                         }
                   ],
                   "name": "allowance",
-                  "outputs": [
-                        {
-                              "internalType": "uint256",
-                              "name": "",
-                              "type": "uint256"
-                        }
-                  ],
-                  "stateMutability": "view",
-                  "type": "function"
-            },
-            {
-                  "inputs": [],
-                  "name": "amount",
                   "outputs": [
                         {
                               "internalType": "uint256",
@@ -297,14 +414,40 @@ export const ERC20_GOO = {
             {
                   "inputs": [
                         {
-                              "internalType": "bytes",
-                              "name": "_sign",
-                              "type": "bytes"
+                              "internalType": "address",
+                              "name": "",
+                              "type": "address"
                         }
                   ],
+                  "name": "claimed",
+                  "outputs": [
+                        {
+                              "internalType": "bool",
+                              "name": "",
+                              "type": "bool"
+                        }
+                  ],
+                  "stateMutability": "view",
+                  "type": "function"
+            },
+            {
+                  "inputs": [],
                   "name": "burnAll",
                   "outputs": [],
                   "stateMutability": "nonpayable",
+                  "type": "function"
+            },
+            {
+                  "inputs": [],
+                  "name": "checkBlockTimestamp",
+                  "outputs": [
+                        {
+                              "internalType": "uint256",
+                              "name": "",
+                              "type": "uint256"
+                        }
+                  ],
+                  "stateMutability": "view",
                   "type": "function"
             },
             {
@@ -379,6 +522,67 @@ export const ERC20_GOO = {
             {
                   "inputs": [
                         {
+                              "internalType": "bytes32",
+                              "name": "role",
+                              "type": "bytes32"
+                        }
+                  ],
+                  "name": "getRoleAdmin",
+                  "outputs": [
+                        {
+                              "internalType": "bytes32",
+                              "name": "",
+                              "type": "bytes32"
+                        }
+                  ],
+                  "stateMutability": "view",
+                  "type": "function"
+            },
+            {
+                  "inputs": [
+                        {
+                              "internalType": "bytes32",
+                              "name": "role",
+                              "type": "bytes32"
+                        },
+                        {
+                              "internalType": "address",
+                              "name": "account",
+                              "type": "address"
+                        }
+                  ],
+                  "name": "grantRole",
+                  "outputs": [],
+                  "stateMutability": "nonpayable",
+                  "type": "function"
+            },
+            {
+                  "inputs": [
+                        {
+                              "internalType": "bytes32",
+                              "name": "role",
+                              "type": "bytes32"
+                        },
+                        {
+                              "internalType": "address",
+                              "name": "account",
+                              "type": "address"
+                        }
+                  ],
+                  "name": "hasRole",
+                  "outputs": [
+                        {
+                              "internalType": "bool",
+                              "name": "",
+                              "type": "bool"
+                        }
+                  ],
+                  "stateMutability": "view",
+                  "type": "function"
+            },
+            {
+                  "inputs": [
+                        {
                               "internalType": "address",
                               "name": "spender",
                               "type": "address"
@@ -397,6 +601,24 @@ export const ERC20_GOO = {
                               "type": "bool"
                         }
                   ],
+                  "stateMutability": "nonpayable",
+                  "type": "function"
+            },
+            {
+                  "inputs": [
+                        {
+                              "internalType": "address",
+                              "name": "_to",
+                              "type": "address"
+                        },
+                        {
+                              "internalType": "uint256",
+                              "name": "_amount",
+                              "type": "uint256"
+                        }
+                  ],
+                  "name": "mint",
+                  "outputs": [],
                   "stateMutability": "nonpayable",
                   "type": "function"
             },
@@ -429,20 +651,68 @@ export const ERC20_GOO = {
             {
                   "inputs": [
                         {
-                              "internalType": "bytes",
-                              "name": "_sign",
-                              "type": "bytes"
-                        }
-                  ],
-                  "name": "recoverSigner",
-                  "outputs": [
+                              "internalType": "bytes32",
+                              "name": "role",
+                              "type": "bytes32"
+                        },
                         {
                               "internalType": "address",
-                              "name": "",
+                              "name": "account",
                               "type": "address"
                         }
                   ],
-                  "stateMutability": "pure",
+                  "name": "renounceRole",
+                  "outputs": [],
+                  "stateMutability": "nonpayable",
+                  "type": "function"
+            },
+            {
+                  "inputs": [
+                        {
+                              "internalType": "bytes32",
+                              "name": "role",
+                              "type": "bytes32"
+                        },
+                        {
+                              "internalType": "address",
+                              "name": "account",
+                              "type": "address"
+                        }
+                  ],
+                  "name": "revokeRole",
+                  "outputs": [],
+                  "stateMutability": "nonpayable",
+                  "type": "function"
+            },
+            {
+                  "inputs": [
+                        {
+                              "internalType": "address",
+                              "name": "_owner",
+                              "type": "address"
+                        }
+                  ],
+                  "name": "setNewOwner",
+                  "outputs": [],
+                  "stateMutability": "nonpayable",
+                  "type": "function"
+            },
+            {
+                  "inputs": [
+                        {
+                              "internalType": "uint256",
+                              "name": "_startTime",
+                              "type": "uint256"
+                        },
+                        {
+                              "internalType": "uint256",
+                              "name": "_endTime",
+                              "type": "uint256"
+                        }
+                  ],
+                  "name": "startAll",
+                  "outputs": [],
+                  "stateMutability": "nonpayable",
                   "type": "function"
             },
             {
@@ -453,6 +723,25 @@ export const ERC20_GOO = {
                               "internalType": "uint256",
                               "name": "",
                               "type": "uint256"
+                        }
+                  ],
+                  "stateMutability": "view",
+                  "type": "function"
+            },
+            {
+                  "inputs": [
+                        {
+                              "internalType": "bytes4",
+                              "name": "interfaceId",
+                              "type": "bytes4"
+                        }
+                  ],
+                  "name": "supportsInterface",
+                  "outputs": [
+                        {
+                              "internalType": "bool",
+                              "name": "",
+                              "type": "bool"
                         }
                   ],
                   "stateMutability": "view",
@@ -525,7 +814,7 @@ export const ERC20_GOO = {
                         },
                         {
                               "internalType": "uint256",
-                              "name": "amount",
+                              "name": "_amount",
                               "type": "uint256"
                         }
                   ],
@@ -554,7 +843,7 @@ export const ERC20_GOO = {
                         },
                         {
                               "internalType": "uint256",
-                              "name": "amount",
+                              "name": "_amount",
                               "type": "uint256"
                         }
                   ],
@@ -621,6 +910,10 @@ export const ERC20_GOO = {
                   "outputs": [],
                   "stateMutability": "nonpayable",
                   "type": "function"
+            },
+            {
+                  "stateMutability": "payable",
+                  "type": "receive"
             }
       ]
 }

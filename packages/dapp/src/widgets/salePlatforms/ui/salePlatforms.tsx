@@ -1,3 +1,6 @@
+
+import { useStore } from "effector-react";
+
 import {
   BodyMainAfterPreSale,
   TablePlatforms,
@@ -5,7 +8,7 @@ import {
   BodyPlatforms,
   TitlePlatforms,
   ListPlatforms,
-  IconPlatforms, LinkPlatforms,
+  IconPlatforms,
 } from "./salePlatforms.styled";
 
 import syncSwap from "./img/syncSwap.svg";
@@ -15,18 +18,21 @@ import {ButtonType} from "shared/ui/Button";
 import {notificationStore} from "shared/lib/notification";
 import {DEADLINE, NotificationType} from "shared/config/notification";
 import {platforms} from "../config";
+import { $deadline } from "entities/sale";
 
-export const goToPlatform = () => {
-  const deadline = 100; // MOCK
+export const goToPlatform = (deadline: number, link:string) => () => {
   if(deadline > 0) {
     return notificationStore.createNotification({
       text:DEADLINE,
       type:NotificationType.ERROR
     })
   }
+
+  window.open(link)
 }
 
 export const SalePlatforms = () => {
+  const deadline = useStore($deadline)
   return (
     <BodyMainAfterPreSale>
 
@@ -34,25 +40,21 @@ export const SalePlatforms = () => {
           <NamePlatforms>Buy Now</NamePlatforms>
 
           <ListPlatforms>
-            <LinkPlatforms to={platforms.buyNow.SyncSwap}>
               <BodyPlatforms
                   typeBtn={ButtonType.GRADIENT_HOVER}
-                  onClick={goToPlatform}
+                  onClick={goToPlatform(deadline, platforms.buyNow.SyncSwap)}
               >
                 <IconPlatforms src={syncSwap} />
                 <TitlePlatforms>SyncSwap</TitlePlatforms>
               </BodyPlatforms>
-            </LinkPlatforms>
 
-            <LinkPlatforms to={platforms.buyNow.Izumi}>
               <BodyPlatforms
                   typeBtn={ButtonType.GRADIENT_HOVER}
-                  onClick={goToPlatform}
+                  onClick={goToPlatform(deadline, platforms.buyNow.Izumi)}
               >
                 <IconPlatforms src={Izumi} />
                 <TitlePlatforms>Izumi</TitlePlatforms>
               </BodyPlatforms>
-            </LinkPlatforms>
           </ListPlatforms>
         </TablePlatforms>
 
@@ -60,15 +62,13 @@ export const SalePlatforms = () => {
           <NamePlatforms>Tracking</NamePlatforms>
 
           <ListPlatforms style={{ justifyContent: "center" }}>
-            <LinkPlatforms to={platforms.tracking.Dexscreener}>
               <BodyPlatforms
                   typeBtn={ButtonType.GRADIENT_HOVER}
-                  onClick={goToPlatform}
+                  onClick={goToPlatform(deadline, platforms.tracking.Dexscreener)}
               >
                 <IconPlatforms src={Dexscreener} />
                 <TitlePlatforms>Dexscreener</TitlePlatforms>
               </BodyPlatforms>
-            </LinkPlatforms>
           </ListPlatforms>
         </TablePlatforms>
       </BodyMainAfterPreSale>

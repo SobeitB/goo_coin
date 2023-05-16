@@ -88,9 +88,6 @@ export const TitlePlatforms = styled.p`
   }
 `
 
-export const LinkPlatforms = styled(Link)`
-  
-`
 
 export const BodyPlatforms = styled(BtnUI)`
   min-width: 310px;

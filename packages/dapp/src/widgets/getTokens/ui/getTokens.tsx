@@ -7,7 +7,7 @@ import { claimAnchor } from "shared/config/router";
 
 
 export const GetTokens = () => {
-    const [isPresale, setIsPresale] = useToogle(true);
+    const [isPresale, setIsPresale] = useToogle();
 
     return(
         <Body id={claimAnchor}>

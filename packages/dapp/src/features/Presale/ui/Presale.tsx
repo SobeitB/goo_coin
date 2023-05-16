@@ -24,7 +24,7 @@ export const Presale = memo(() => {
             </ListItems>
 
             <DescriptionTime>Time left before airdrop/presale ends.</DescriptionTime>
-            <Timer timeLeft={1000} />
+            <Timer />
 
             <MarginTopProgress />
             <Progress percentClaimed={30} />

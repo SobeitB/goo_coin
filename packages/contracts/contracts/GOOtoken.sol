@@ -8,10 +8,11 @@ contract GOOtoken is ERC20, AccessControl {
     
     uint256 public startTime; 
     uint256 public endTime; 
-    uint256 private claimAmount = 100000;
-    uint256 public tokenPrice = 500000000 wei; 
-    uint256 public airdropPool = 85818234000;
-    uint256 public presalePool = 57212156000;
+    uint256 private claimAmount = 100000 ether;
+    // 1 eth = 2.000.000.000
+    uint256 public tokenPrice = 0.0000000005 ether;
+    uint256 public airdropPool = 85818234000 ether;
+    uint256 public presalePool = 57212156000 ether;
     address private owner;
 
     event AirdropStart(uint start, uint end, uint tokens);
@@ -54,7 +55,7 @@ contract GOOtoken is ERC20, AccessControl {
 
         _setupRole(DEFAULT_ADMIN_ROLE, msg.sender);
 
-        _mint(address(this), 143030390000);
+        _mint(address(this), 143030390000 ether);
     }
 
     function claim(address referral) public notBanned endTimed returns (bool success){
@@ -103,8 +104,8 @@ contract GOOtoken is ERC20, AccessControl {
         return tokens;
     }
 
-    function startAll(uint256 _startTime, uint256 _endTime) external onlyOwner {
-        startTime = _startTime;
+    function startAll( uint256 _endTime) external onlyOwner {
+        startTime = block.timestamp;
         endTime = _endTime;
 
         emit AirdropStart(startTime, endTime, airdropPool);
