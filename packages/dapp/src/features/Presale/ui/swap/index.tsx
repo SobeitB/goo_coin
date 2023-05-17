@@ -37,11 +37,13 @@ export const Swap = memo(({inputSend}:{inputSend:RefObject<HTMLInputElement>}) =
                         value={value}
                         onChange={(e:any) => onInputSend(e.target.value as string)}
                         ref={inputSend}
+                        min="-1"
+                        max="1"
                     />
 
                     <BodyToken>
                         <ImgToken src={eth} />
-                        <TextToken>ETH</TextToken>
+                        <TextToken>ETH</TextToken>r
                     </BodyToken>
 
                     <NextSwap src={next} />

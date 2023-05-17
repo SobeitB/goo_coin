@@ -19,8 +19,7 @@ export const timerTemplate = ({
   hours,
   minutes,
   seconds,
-}: timerTemplateProps) => {
-  return (
+}: timerTemplateProps) => (
     <TimerTextWrapper>
       <TimerTextBody>
         <TimerText>{fromatDate(days)}</TimerText>
@@ -42,5 +41,4 @@ export const timerTemplate = ({
         <TimerTextTitle>Seconds</TimerTextTitle>
       </TimerTextBody>
     </TimerTextWrapper>
-  );
-};
+);

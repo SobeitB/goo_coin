@@ -3,7 +3,8 @@ import { memo } from "react"
 import {DescriptionGet, Items, ListItems, MarginTopProgress} from "./Presale.styled"
 import {Swap} from "./swap";
 import {listRules} from "../config";
-import {DescriptionTime, Progress, Timer} from "shared/ui/getComponents";
+import {DescriptionTime, Progress} from "shared/ui/getComponents";
+import { Timer } from "entities/sale"
 import {WrapperBtn} from "shared/ui/getComponents/styledShared.ts";
 import {WalletConnect} from "entities/user";
 import {usePurchase} from "../model";
@@ -17,6 +18,8 @@ export const Presale = memo(() => {
         percent,
         inputSend,
     } = usePurchase();
+
+    
 
     return(
         <>

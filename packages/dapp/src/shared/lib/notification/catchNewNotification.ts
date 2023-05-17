@@ -6,7 +6,6 @@ import {notificationStore} from "shared/lib/notification";
 
 export const catchErrorNotification = (
     textError:string,
-    typeNotification:NotificationType
 ) => {
     
     return ALL_ERRORS.forEach((ERROR:ObjNotification) => {
@@ -15,7 +14,7 @@ export const catchErrorNotification = (
         
         notificationStore.createNotification({
             text: ERROR.text,
-            type: typeNotification
+            type: NotificationType.ERROR
         });
     })
 }

@@ -25,10 +25,14 @@ export const TabsMenu = styled.div`
   }
 `
 
-export const Tab = styled.div`
+export const Tab = styled.div
+  .attrs((props:{isopen:boolean}) => props)`
   position: relative;
   ${sizeMixin(164, 331, 1440, "width")}
   ${sizeMixin(56, 100, 1440, "height")};
+  & ${BtnUI}:fist-child {
+    ${props => props.isopen && `background: red`}
+  }
   
   @media(max-width: 768px) {
       ${sizeMixin(100, 250, 1440, "width")}

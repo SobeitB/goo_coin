@@ -1,5 +1,4 @@
 import {createApi, createStore, createEvent} from "effector";
-import {AIR_DROP, PRESALE_DROP} from '../config'
 
 interface pools {
     claim:number,
@@ -7,8 +6,8 @@ interface pools {
 }
 
 export const defaultValue:pools = {
-    claim:AIR_DROP,
-    presale:PRESALE_DROP,
+    claim:0,
+    presale:0,
 }
 
 export const setPools = createEvent<pools>()

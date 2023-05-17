@@ -16,14 +16,14 @@ export const GetTokens = () => {
             <Title>You get zkGoose now</Title>
 
             <TabsMenu>
-                <Tab>
+                <Tab isopen={!isPresale}>
                     <Button
                         type={ButtonType.TAB}
                         onClick={setIsPresale}
                     >Airdrop</Button>
                 </Tab>
 
-                <Tab>
+                <Tab isopen={isPresale}>
                     <Button
                         type={ButtonType.TAB}
                         onClick={setIsPresale}

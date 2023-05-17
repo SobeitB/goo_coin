@@ -41,3 +41,4 @@ export const wagmiClient = createClient({
 
 
 export {ERC20_GOO} from './contracts'
+export {NULL_ADDRESS} from './CONST'

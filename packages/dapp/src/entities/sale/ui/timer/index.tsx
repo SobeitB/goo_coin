@@ -1,12 +1,13 @@
 
 import Countdown from "react-countdown";
 import { useStore } from "effector-react";
+import { memo } from "react";
 
 import {TimerBody, TimerTitle, TimerWrapper} from "./styled"
 import {timerTemplate} from "./timer.tsx";
-import { $deadline } from "entities/sale/index.ts";
+import { $deadline } from "../../model";
 
-export const Timer = () => {
+export const Timer = memo(() => {
     const timer = useStore($deadline);
 
     return(
@@ -18,4 +19,4 @@ export const Timer = () => {
               </TimerWrapper>
         </TimerBody>
     )
-}
+})
