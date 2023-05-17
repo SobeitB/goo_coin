@@ -139,11 +139,10 @@ export const ReferralBtn = styled.div`
   width: 408px;
   height: 81px;
   font-weight: var(--font-weight-bold);
-  font-size: var(--font-size-h4);
 
   
   & ${BtnUI} {
-    ${sizeMixin(22, 33, 1067)};
+    ${sizeMixin(22, 30, 1067)};
   }
   ${sizeMixin(26, 52, 1067, "margin-top")};
 

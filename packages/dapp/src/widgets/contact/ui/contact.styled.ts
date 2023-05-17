@@ -71,7 +71,12 @@ export const ItemsInfo = styled.div`
 export const Title = styled.h2`
     font-weight: var(--font-weight-bold);
 
-    ${sizeMixin(20, 36, 1440)};
+
+    font-size: 36px;
+    @media(max-width: 1594px) {
+      ${sizeMixin(20, 36, 1440)};
+    }
+
 
     @media(max-width: 768px) {
         font-size: 20px;
@@ -88,7 +93,11 @@ export const Title = styled.h2`
 
 export const Description = styled.p`
     font-weight: var(--font-weight-bold);
-    ${sizeMixin(25, 45, 1440)};
+    
+      font-size: 45px;
+      @media(max-width: 1594px) {
+        ${sizeMixin(25, 45, 1440)};
+      }
     @media (max-width: 768px) {
         font-size: 20px;
     }

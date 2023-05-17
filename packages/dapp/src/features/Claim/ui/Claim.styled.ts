@@ -24,20 +24,6 @@ export const BodyClaimBtn = styled.div`
     }
 `
 
-export const ClaimBtn = styled.button`
-    width: 100%;
-    height: 100%;
-    background: var(--bg-color-blue);
-    border: 5px solid var(--font-color-white);
-    border-radius: 20px;
-    font-size: var(--font-size-h4);
-
-    @media(max-width: 420px) {
-        border-radius: 15px;
-        font-size: 29px;
-    }
-`
-
 export const BodyCircle = styled.div`
     ${CcssBosyCircle};
     width: 62px;

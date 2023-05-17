@@ -20,7 +20,7 @@ const animationNotification = keyframes`
 `;
 
 export const BodyNotification = styled.div
-  .attrs((props: { theme: NotificationType }) => props)`
+  .attrs((props: { themeNotification: NotificationType }) => props)`
   max-width:70%;
   min-height: 46px;
   position: fixed;
@@ -41,26 +41,26 @@ export const BodyNotification = styled.div
   padding: 30px 40px;
 
   font-weight: 400;
-  font-size: var(${(props) => props.theme === NotificationType.INFO 
+  font-size: var(${(props) => props.themeNotification === NotificationType.INFO 
     ? "--font-size-x-small"
     : "--font-size-h4"
   });
   color: var(--font-color-white);
 
   @media(max-width: 780px) {
-    font-size:${(props) => props.theme !== NotificationType.INFO
+    font-size:${(props) => props.themeNotification !== NotificationType.INFO
         && "25px"
     };
   }
 
   @media(max-width: 600px) {
-    font-size:${(props) => props.theme !== NotificationType.INFO
+    font-size:${(props) => props.themeNotification !== NotificationType.INFO
             && "23px"
     };
   }
 
   @media(max-width: 400px) {
-    font-size:${(props) => props.theme !== NotificationType.INFO
+    font-size:${(props) => props.themeNotification !== NotificationType.INFO
             && "19px"
     };
     padding: 20px;
@@ -123,7 +123,7 @@ export const BodyIcon = styled.div`
 `
 
 export const BorderType = styled.div
-.attrs((props: { theme: NotificationType }) => props)`
+.attrs((props: { themeNotification: NotificationType }) => props)`
   width:100%;
   height:100%;
   border-radius: 50%;
@@ -133,7 +133,7 @@ export const BorderType = styled.div
   justify-content: center;
 
   border: 12px solid 
-    ${props => props.theme === NotificationType.ERROR ?
+    ${props => props.themeNotification === NotificationType.ERROR ?
       '#DE0000'
       :
       '#27C100'

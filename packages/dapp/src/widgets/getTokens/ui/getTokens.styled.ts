@@ -4,6 +4,7 @@ import styled  from "styled-components";
 import { BodyCenter } from "shared/ui/Container";
 import { sizeMixin } from "shared/lib/mixinsCSS";
 import {BtnUI} from "shared/ui/Button";
+import {CcssBosyCircle, NotificationCircleBody} from "shared/ui/NotificationCircle";
 
 export const Body = styled(BodyCenter)`
     ${sizeMixin(100, 200, 1067, "margin-top")};
@@ -25,13 +26,53 @@ export const TabsMenu = styled.div`
   }
 `
 
+export const BodyCircle = styled.div`
+    ${CcssBosyCircle};
+    width: 78px;
+    height: 78px;
+
+    & ${NotificationCircleBody} {
+        font-size: 29px;
+    }
+  
+  transition: all 0.5s ease;
+`
+
 export const Tab = styled.div
   .attrs((props:{isopen:boolean}) => props)`
   position: relative;
   ${sizeMixin(164, 331, 1440, "width")}
   ${sizeMixin(56, 100, 1440, "height")};
-  & ${BtnUI}:fist-child {
-    ${props => props.isopen && `background: red`}
+  
+  & ${BtnUI} { 
+    border-bottom: 0;
+    border-radius:20px 20px 0 0;
+    border-width: 7px;
+    @media (max-width: 500px) {
+      border-radius: 10px 10px 0 0;
+    }
+  }
+  &:first-child ${BtnUI} {
+    ${props => props.isopen && `background: rgba(2, 2, 54, 0.36);`}
+  }
+  
+  &:last-child ${BtnUI} {
+    ${props => props.isopen && `background: #020236;`}
+  }
+  
+  & ${BtnUI} {
+    ${props => !props.isopen && `
+        border-bottom: 7px solid var(--font-color-white);
+        border-radius: 20px;
+        position: relative;
+        top:5px;
+    `}
+
+    position: relative;
+    top: ${props => props.isopen ? `5px` : '0'};
+  }
+  &:last-child ${BodyCircle} {
+    opacity:  ${props => props.isopen ? `0` : '1'};
   }
   
   @media(max-width: 768px) {
@@ -74,9 +115,13 @@ export const WrapperGetTokens = styled.div
 
     background: ${props => props.isPresale ? '#020236' : 'var(--bg-color-blue-blur)'};
     border: 7px solid var(--font-color-white);
-    border-radius: 30px;
-    
-    
+  
+    border-radius: ${props => props.isPresale ? '30px' : '0 30px 30px 30px'} ;
+  
+  @media(max-width: 650px) {
+
+    border-radius: ${props => props.isPresale ? '30px 0 30px 30px' : '0 30px 30px 30px'} ;
+  }
 `
 
 export const BodyChoose = styled.div

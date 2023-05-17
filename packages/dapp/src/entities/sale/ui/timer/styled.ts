@@ -3,7 +3,6 @@ import { sizeMixin } from "shared/lib/mixinsCSS";
 
 export const TimerBody = styled.div`
   width: 763px;
-  height: 242px;
 
   background: rgba(1, 0, 29, 0.28);
   border: 7px solid #ffffff;

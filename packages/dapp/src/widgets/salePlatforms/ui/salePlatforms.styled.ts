@@ -2,8 +2,7 @@
 import styled from "styled-components";
 
 import { sizeMixin } from "shared/lib/mixinsCSS";
-import {BtnUI, ButtonType} from "../../../shared/ui/Button";
-import {Link} from "atomic-router-react";
+import {BtnUI} from "shared/ui/Button";
 
 
 export const BodyMainAfterPreSale = styled.div`

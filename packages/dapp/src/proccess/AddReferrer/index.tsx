@@ -14,25 +14,28 @@ export const addReferrer = (component: () => React.ReactNode) => () => {
     const {address} = useAccount();
 
     useEffect(() => {
-        const {referrer} = query;
+        const getData = () => {
+            const {referrer} = query;
 
-        if(!referrer) return; 
-        const addressReffer = `0x${Buffer.from(bs58.decode(referrer)).toString("hex")}`;
+            if(!referrer) return;
+            const addressReffer = `0x${Buffer.from(bs58.decode(referrer)).toString("hex")}`;
 
-        if(addressReffer.toLocaleLowerCase() === address?.toLocaleLowerCase()) {
-            return notificationStore.createNotification({
-                text:YOUR_ADDRESS,
-                type:NotificationType.ERROR
-            });
+            if(addressReffer.toLocaleLowerCase() === address?.toLocaleLowerCase()) {
+                return notificationStore.createNotification({
+                    text:YOUR_ADDRESS,
+                    type:NotificationType.ERROR
+                });
+            }
+
+            if(
+                addressReffer
+                &&
+                !REFERRER_ITEM
+            ) {
+                localStorage.setItem(REFERRER_KEY, addressReffer);
+            }
         }
-
-        if(
-            addressReffer
-            && 
-            !REFERRER_ITEM
-        ) {
-            localStorage.setItem(REFERRER_KEY, addressReffer);
-        }
+        getData()
     }, [query, address])
 
     return component()

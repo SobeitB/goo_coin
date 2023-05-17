@@ -1,11 +1,12 @@
 import { Title } from "shared/ui/Title"
-import {Body, BodyChoose, Tab, TabsMenu, WrapperGetTokens} from "./getTokens.styled"
+import {Body, BodyChoose, BodyCircle, Tab, TabsMenu, WrapperGetTokens} from "./getTokens.styled"
 import { Claim } from "features/Claim";
 import { Presale } from "features/Presale";
 import { useToogle } from "shared/lib/toogle";
 import { claimAnchor } from "shared/config/router";
 import {Button} from "shared/ui/Button";
 import {ButtonType} from "shared/ui/Button";
+import {NotificationCircle} from "../../../shared/ui/NotificationCircle";
 
 
 export const GetTokens = () => {
@@ -28,6 +29,12 @@ export const GetTokens = () => {
                         type={ButtonType.TAB}
                         onClick={setIsPresale}
                     >Presale</Button>
+
+                    <BodyCircle>
+                        <NotificationCircle >
+                            Push
+                        </NotificationCircle>
+                    </BodyCircle>
                 </Tab>
             </TabsMenu>
 

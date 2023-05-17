@@ -4,7 +4,7 @@ import {useCallback, useRef,} from "react";
 import {formatEther, isAddress, parseEther} from "viem";
 
 
-import {$deadline, $pools, MAX_PRICE, MIN_PRICE, PRICE_TOKEN} from "entities/sale";
+import {$deadline, $pools, MAX_PRICE, MIN_PRICE} from "entities/sale";
 import {catchErrorNotification, notificationStore, sharedCatch} from "shared/lib/notification";
 import {BALANCE, MAX_ETH, MIN_ETH, NotificationType, SUCCESS} from "shared/config/notification";
 import {ERC20_GOO, NULL_ADDRESS} from "shared/config/blockchain";
@@ -58,8 +58,11 @@ export const usePurchase = () => {
             
 
             try {
+                console.log(parseEther(`${value}`))
                 const referr = isAddress(REFERRER_ITEM ?? '') ? REFERRER_ITEM : NULL_ADDRESS
-                const purchase = await contract?.tokenSale(referr, );
+                const purchase = await contract?.tokenSale(referr, {
+                    value:parseEther(`${value}`)
+                });
 
                 if(purchase) {
                     notificationStore.createNotification({

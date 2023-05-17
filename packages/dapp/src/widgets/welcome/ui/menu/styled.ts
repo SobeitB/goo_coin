@@ -2,7 +2,7 @@
 
 import { Link } from "atomic-router-react";
 import { sizeMixin } from "shared/lib/mixinsCSS";
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 
 
 export const MenuBtn = styled.button`

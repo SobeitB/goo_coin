@@ -23,7 +23,12 @@ export const Button = ({children, type, onClick}:ButtonProps) => {
             disabled={isTx}
         >
             {isTx ?
-                "Loading.."
+                <div className="lds-ellipsis">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
                 :
                 children
             }

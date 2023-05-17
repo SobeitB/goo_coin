@@ -1,11 +1,11 @@
-import {memo, ReactNode, useEffect} from "react";
+import { ReactNode} from "react";
 import {useGetData} from './model'
 
 interface InitDataProps {
       children: ReactNode,
 }
 
-export const InitData = ( {children}:InitData ) => {
+export const InitData = ( {children}:InitDataProps ) => {
       useGetData()
 
       return(<>{children}</>)

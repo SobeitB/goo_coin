@@ -26,11 +26,11 @@ export const Notification = () => {
   if (!stateNotification) return null
 
   return (
-    <BodyNotification theme={stateNotification.type}>
+    <BodyNotification themeNotification={stateNotification.type}>
 
       {stateNotification.type !== NotificationType.INFO &&
         <BodyIcon>
-          <BorderType theme={stateNotification.type}>
+          <BorderType themeNotification={stateNotification.type}>
             <img
               src={stateNotification.type === NotificationType.ERROR ? error : success}
             />
