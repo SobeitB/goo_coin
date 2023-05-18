@@ -11,4 +11,10 @@ export const BodyCenter = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    position:relative;
+`
+
+export const BodyContent = styled.div`
+    position:relative;
+    z-index:2;
 `

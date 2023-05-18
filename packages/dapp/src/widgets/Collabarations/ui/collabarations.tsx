@@ -3,14 +3,15 @@ import { BodyCollabarations, BodyTokens, TokenItem } from "./collabarations.styl
 import { Title } from "shared/ui/Title"
 
 import { tokens } from "../config"
+import { aosFadeUp } from "shared/config/aos"
 
 export const Collabarations = () => {
     return(
         <BodyCollabarations>
 
-            <Title>Our wonderful friends</Title>
+            <Title data-aos={aosFadeUp}>Our wonderful friends</Title>
 
-            <BodyTokens>
+            <BodyTokens data-aos={aosFadeUp}>
                 {tokens.map((token) => (
                     <TokenItem key={token.name}>
                         <img src={token.img} />

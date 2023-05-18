@@ -26,6 +26,22 @@ body {
     color: var(--font-color-white);
 }
 
+body::-webkit-scrollbar {
+    width: 29px;
+}
+body::-webkit-scrollbar-track {
+    background: var(--bg-color-blue-blur);
+    border: 5px solid var(--font-color-white);
+    border-radius: 19.5px;
+    padding: 15px 8px;
+}
+body::-webkit-scrollbar-thumb {
+    background: #FFFFFF;
+    border-radius: 19.5px;
+    width: 80%;
+}
+
+
 html {
     scroll-behavior: smooth;
 }

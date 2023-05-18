@@ -1,31 +1,36 @@
 
-import {InformationBodyText, InformationText, NotesItem, NotesList, TitleInfo } from "./infromation.styled"
-import { BodyCenter } from "shared/ui/Container"
+import {InformationBodyText, InformationText, NotesItem, NotesList, TitleInfo, BgInfo } from "./infromation.styled"
+import { BodyCenter, BodyContent } from "shared/ui/Container"
 
 import { info, notes } from "../config"
 import { informationAnchor } from "shared/config/router"
+import { aosFadeUp } from "shared/config/aos"
 
 
 
 export const Information = () => {
     return(
         <BodyCenter id={informationAnchor}>
-            <TitleInfo>Important information </TitleInfo>
+            <BgInfo />
 
-            <InformationBodyText>
-                {info.map((text:string) => (
-                    <InformationText key={text}>{text}</InformationText>
-                ))}
-            </InformationBodyText>
+            <BodyContent>
+                <TitleInfo data-aos={aosFadeUp}>Important information </TitleInfo>
+
+                <InformationBodyText data-aos={aosFadeUp}>
+                    {info.map((text:string) => (
+                        <InformationText key={text}>{text}</InformationText>
+                    ))}
+                </InformationBodyText>
 
 
-            <TitleInfo>Notes</TitleInfo>
+                <TitleInfo data-aos={aosFadeUp}>Notes</TitleInfo>
 
-            <NotesList>
-                {notes.map((note:string) => (
-                    <NotesItem key={note}>{note}</NotesItem>
-                ))}
-            </NotesList>
+                <NotesList data-aos={aosFadeUp}>
+                    {notes.map((note:string) => (
+                        <NotesItem key={note}>{note}</NotesItem>
+                    ))}
+                </NotesList>
+            </BodyContent>
         </BodyCenter>
     )
 }

@@ -19,6 +19,7 @@ import {notificationStore} from "shared/lib/notification";
 import {DEADLINE, NotificationType} from "shared/config/notification";
 import {platforms} from "../config";
 import { $deadline } from "entities/sale";
+import { aosFadeUp } from "shared/config/aos";
 
 export const goToPlatform = (deadline: number, link:string) => () => {
   if(deadline > 0) {
@@ -33,10 +34,11 @@ export const goToPlatform = (deadline: number, link:string) => () => {
 
 export const SalePlatforms = () => {
   const deadline = useStore($deadline)
+  
   return (
     <BodyMainAfterPreSale>
 
-        <TablePlatforms>
+        <TablePlatforms data-aos={aosFadeUp}>
           <NamePlatforms>Buy Now</NamePlatforms>
 
           <ListPlatforms>
@@ -58,7 +60,7 @@ export const SalePlatforms = () => {
           </ListPlatforms>
         </TablePlatforms>
 
-        <TablePlatforms>
+        <TablePlatforms data-aos={aosFadeUp}>
           <NamePlatforms>Tracking</NamePlatforms>
 
           <ListPlatforms style={{ justifyContent: "center" }}>

@@ -6,7 +6,10 @@ import { useToogle } from "shared/lib/toogle";
 import { claimAnchor } from "shared/config/router";
 import {Button} from "shared/ui/Button";
 import {ButtonType} from "shared/ui/Button";
-import {NotificationCircle} from "../../../shared/ui/NotificationCircle";
+import {NotificationCircle} from "shared/ui/NotificationCircle";
+import { aosFadeUp } from "shared/config/aos";
+// import tabClaim from "./ui/tabClaim.png";
+// import tabPresale from "./ui/tabPresale.png";
 
 
 export const GetTokens = () => {
@@ -14,7 +17,7 @@ export const GetTokens = () => {
 
     return(
         <Body id={claimAnchor}>
-            <Title>You get zkGoose now</Title>
+            <Title data-aos={aosFadeUp}>You get zkGoose now</Title>
 
             <TabsMenu>
                 <Tab isopen={!isPresale}>
@@ -22,6 +25,8 @@ export const GetTokens = () => {
                         type={ButtonType.TAB}
                         onClick={setIsPresale}
                     >Airdrop</Button>
+
+                    {/*<TabImg src={tabClaim} />*/}
                 </Tab>
 
                 <Tab isopen={isPresale}>
@@ -35,6 +40,8 @@ export const GetTokens = () => {
                             Push
                         </NotificationCircle>
                     </BodyCircle>
+
+                    {/*<TabImg src={tabPresale} />*/}
                 </Tab>
             </TabsMenu>
 

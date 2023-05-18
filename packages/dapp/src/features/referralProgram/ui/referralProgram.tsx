@@ -14,15 +14,16 @@ import copy from "./img/copy.svg";
 import {inviteAnchor} from "shared/config/router";
 import {$linkReferral, copyLink, createReferralLink} from "../model";
 import {useRef} from "react";
-import {Button} from "../../../shared/ui/Button";
-import {ButtonType} from "../../../shared/ui/Button/config.ts";
+import {Button} from "shared/ui/Button";
+import {ButtonType} from "shared/ui/Button/config.ts";
+import { aosFadeUp } from "shared/config/aos/index.ts";
 
 export const ReferralProgram = () => {
   const inputAddress = useRef<HTMLInputElement>(null);
   const link = useStore($linkReferral);
 
   return (
-      <BodyReferral id={inviteAnchor}>
+      <BodyReferral id={inviteAnchor} data-aos={aosFadeUp}>
           <Titleinvite>Referral program</Titleinvite>
 
           <Description>Get a referral link</Description>

@@ -142,7 +142,10 @@ export const ReferralBtn = styled.div`
 
   
   & ${BtnUI} {
-    ${sizeMixin(22, 30, 1067)};
+      font-size: 30px;
+      @media (max-width:1440px) {
+          ${sizeMixin(22, 30, 1440)};
+      }
   }
   ${sizeMixin(26, 52, 1067, "margin-top")};
 

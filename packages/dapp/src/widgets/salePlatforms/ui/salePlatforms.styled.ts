@@ -77,8 +77,12 @@ export const NamePlatforms = styled.p`
 `;
 
 export const TitlePlatforms = styled.p`
-  ${sizeMixin(32, 38, 1067)}
 
+  font-size: 38px;
+  @media (max-width:1440px) {
+    ${sizeMixin(32, 38, 1400)}
+  }
+  
   font-weight:var(--font-weight-bold);
   margin-left: 23px;
 

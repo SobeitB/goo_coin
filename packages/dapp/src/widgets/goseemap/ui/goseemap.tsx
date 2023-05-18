@@ -7,15 +7,16 @@ import { phases } from "../config"
 import { roadmapAnchor } from "shared/config/router"
 
 import next from 'shared/assets/img/next.svg'
+import { aosFadeUp } from "shared/config/aos"
 
 
 export const Goseemap  = () => {
 
     return(
         <GoSeeMapBody id={roadmapAnchor}>
-            <Title>Goseemap</Title>
+            <Title data-aos={aosFadeUp} >Goseemap</Title>
 
-            <GoSeeMapWrapper>
+            <GoSeeMapWrapper data-aos={aosFadeUp}>
                 {phases.map((phase:string[], index:number) => (
                     <PhaseBody key={phase[0]}>
                         <PhaseTitle>Phase {index+1}</PhaseTitle>

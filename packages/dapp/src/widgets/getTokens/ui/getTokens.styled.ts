@@ -36,6 +36,19 @@ export const BodyCircle = styled.div`
     }
   
   transition: all 0.5s ease;
+
+  @media(max-width: 650px) {
+    width: 57px;
+    height: 57px;
+    & ${NotificationCircleBody} {
+      font-size: 17px;
+    }
+  }
+`
+
+export const TabImg = styled.img`
+  position: absolute;
+  
 `
 
 export const Tab = styled.div
@@ -52,13 +65,10 @@ export const Tab = styled.div
       border-radius: 10px 10px 0 0;
     }
   }
-  &:first-child ${BtnUI} {
+  & ${BtnUI} {
     ${props => props.isopen && `background: rgba(2, 2, 54, 0.36);`}
   }
   
-  &:last-child ${BtnUI} {
-    ${props => props.isopen && `background: #020236;`}
-  }
   
   & ${BtnUI} {
     ${props => !props.isopen && `
@@ -112,8 +122,6 @@ export const WrapperGetTokens = styled.div
     ${sizeMixin(28, 57, 1440, "padding-bottom")}
     ${sizeMixin(9, 20, 1440, "padding-right")}
     ${sizeMixin(9, 20, 1440, "padding-left")}
-
-    background: ${props => props.isPresale ? '#020236' : 'var(--bg-color-blue-blur)'};
     border: 7px solid var(--font-color-white);
   
     border-radius: ${props => props.isPresale ? '30px' : '0 30px 30px 30px'} ;

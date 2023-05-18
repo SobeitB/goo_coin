@@ -3,6 +3,7 @@ import { BodyDescription, BodyEconomics, BodyImg, EconomicsImg, TokenSupply, Tok
 import { Title } from "shared/ui/Title"
 import roadmap from "./img/roadmap.png"
 import { tokenonomicsAnchor } from "shared/config/router"
+import { aosFadeUp } from "shared/config/aos"
 
 
 
@@ -10,14 +11,14 @@ export const Economics = () => {
     return(
         <BodyEconomics id={tokenonomicsAnchor}>
 
-            <Title>Goose Economics</Title>
+            <Title data-aos={aosFadeUp}>Goose Economics</Title>
 
-            <BodyDescription>
+            <BodyDescription data-aos={aosFadeUp}>
                 <TokenSupplyTitle>Token supply</TokenSupplyTitle>
                 <TokenSupply>715.151.950.000</TokenSupply>
             </BodyDescription>
 
-            <BodyImg >
+            <BodyImg data-aos={aosFadeUp}>
                 <EconomicsImg src={roadmap} />
             </BodyImg>
 

@@ -3,6 +3,19 @@ import { styled } from "styled-components";
 import imgLi from "shared/assets/img/imgLi.svg";
 import { Title } from "shared/ui/Title";
 import { sizeMixin } from "shared/lib/mixinsCSS";
+import bgInfo from "./img/bgInfo.png"
+
+
+export const BgInfo = styled.div`
+    position:absolute;
+    z-index:1;
+    width:100%;
+    height:100%;
+    background: url(${bgInfo});
+    background-repeat: repeat;
+    background-position: 50% 50%;
+    background-size: 100% 100%;
+`
 
 export const TitleInfo = styled(Title)`
     text-align: center;
